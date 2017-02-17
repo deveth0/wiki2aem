@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mediawiki version="0.8" xml:lang="en" xmlns="http://www.mediawiki.org/xml/export-0.8/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.8/ http://www.mediawiki.org/xml/export-0.8.xsd">
+
+  <page>
+    <title>Aa River</title>
+    <ns>0</ns>
+    <id>696</id>
+    <revision>
+      <id>561900136</id>
+      <parentid>555830866</parentid>
+      <timestamp>2013-06-28T00:38:58Z</timestamp>
+      <contributor>
+        <username>ChrisGualtieri</username>
+        <id>16333418</id>
+      </contributor>
+      <minor/>
+      <comment>DMY/MDY Tagging on Date O/I/A using [[Project:AWB|AWB]]</comment>
+      <text xml:space="preserve">{{Use dmy dates|date=June 2013}}
+'''Aa''' is the name of a large number of small [[Europe]]an [[river]]s. Aa originated from an Indo-European word meaning water, and it can be seen in the German ''ach'' or ''aach'' or the [[Scandinavian languages|Scandinavian]] ''a'' or ''aa''.&lt;ref name=EA&gt;{{cite encyclopedia |editor-first=Patricia |editor-last=Bayer |encyclopedia=Encyclopedia Americana |title=A |edition=First |year=2000  |publisher=Grolier Incorporated |volume=I A-Anjou |location=Danbury, CT |isbn=0-7172-0133-3 |pages=1 }}&lt;/ref&gt;
+* [[Aa River (France)]], a river in northern France
+* [[Aa River (Meuse)]], a river in North Brabant, Netherlands
+* [[Aa of Weerijs]], a river in North Brabant, Netherlands
+* [[Drentsche Aa]], a river in Drenthe and Groningen, Netherlands
+* [[Aabach (Greifensee)]], or Ustermer Aa, a river in Switzerland
+* [[Sarner Aa]], a tributary of Lake Lucerne in Switzerland
+* [[Aabach (Afte)]], formerly called the Große Aa, a river in Germany
+* [[Aa (Möhne)]], a river in North Rhine-Westphalia, Germany
+* [[Aa (Nethe)]], a river in North Rhine-Westphalia, Germany
+* [[Aa (Werre)]], a river in North Rhine-Westphalia, Germany
+* Aa, a river in Antwerp, Belgium which joins the Nete River
+* [[Engelberger Aa]], a river in [[Obwalden]] and [[Nidwalden]], Switzerland
+* [[Große Aa]], a river in Lower Saxony, Germany
+* [[Münstersche Aa]], a river in Germany, one of several Westphalian rivers called Aa
+* [[Sarner Aa]], a river in [[Obwalden]], Switzerland
+
+== Former names ==
+
+* [[Gauja]], a river in Latvia, formerly known as ''Livländische Aa''
+* [[Lielupe]], a river in Latvia, formerly known as ''Kurländische Aa''
+
+==See also==
+* [[AA (disambiguation)]]
+
+==References==
+
+{{reflist}}
+
+{{geodis}}</text>
+      <sha1>7r3zsq8yzox8fe4x0nthznwxasifw6q</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Algorithms (journal)</title>
+    <ns>0</ns>
+    <id>742</id>
+    <revision>
+      <id>561900402</id>
+      <parentid>526431549</parentid>
+      <timestamp>2013-06-28T00:41:06Z</timestamp>
+      <contributor>
+        <username>ChrisGualtieri</username>
+        <id>16333418</id>
+      </contributor>
+      <minor/>
+      <comment>DMY/MDY Tagging on Date O/I/A using [[Project:AWB|AWB]]</comment>
+      <text xml:space="preserve">{{Use dmy dates|date=June 2013}}
+{{Orphan|date=December 2012}}
+
+{{Infobox journal
+| title = Algorithms
+| discipline = [[computer science]]
+| abbreviation = Entropy
+| publisher = [[MDPI]]
+| country =
+| frequency = Quarterly issues,
+| history = 2008-present
+| openaccess = Yes
+| website = http://www.mdpi.com/journal/algorithms
+| ISSN = 1999-4893
+}}
+'''&quot;Algorithms&quot;''' (plural of [[algorithm]]) is a [[Peer review|peer-reviewed]] [[open access]] [[scientific journal]] &quot;of [[computer science]], theory, methods and interdisciplinary applications, data and information systems, [[software engineering]], [[artificial intelligence]], [[automation]] and [[control systems]].&quot;.&lt;ref&gt;http://www.mdpi.com/journal/algorithms&lt;/ref&gt; It was established in 2008 and is published by [[MDPI]].
+
+== References ==
+{{Reflist}}
+
+== External links ==
+* {{Official website|http://www.mdpi.com/journal/algorithms}}
+
+[[Category:Computer science journals]]
+[[Category:Open access journals]]
+[[Category:Multidisciplinary Digital Publishing Institute academic journals]]
+[[Category:Quarterly journals]]
+[[Category:English-language journals]]
+[[Category:Publications established in 2008]]</text>
+      <sha1>r8qx10k2jssmpmxzijp29a2i3945y1a</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+
+</mediawiki>
