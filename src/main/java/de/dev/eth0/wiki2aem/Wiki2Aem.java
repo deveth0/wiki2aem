@@ -19,15 +19,16 @@ import java.io.InputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import org.apache.commons.lang3.StringEscapeUtils;
+import org.apache.commons.lang3.StringUtils;
 
 public class Wiki2Aem {
 
@@ -35,7 +36,7 @@ public class Wiki2Aem {
   private final String targetFolder;
   private final Template pageTemplate;
   private final Template rootFolderTemplate;
-  private final List<String> pages = new ArrayList<>();
+  private final Map<String, Set<String>> pages = new HashMap<>();
 
   public Wiki2Aem(String sourceFile, String targetFolder) throws IOException {
     this.sourceFile = sourceFile;
@@ -84,7 +85,6 @@ public class Wiki2Aem {
               writePage(content);
               break;
           }
-
         default:
           break;
       }
@@ -99,13 +99,17 @@ public class Wiki2Aem {
               .resolver(MapValueResolver.INSTANCE)
               .build();
       String pageTitle = Escape.validName(content.get("title"));
-      File folder = new File(targetFolder + "/" + pageTitle);
+      String key = StringUtils.substring(pageTitle, 0, 2);
+      File folder = new File(targetFolder + "/" + key + "/" + pageTitle);
       folder.mkdirs();
       try (PrintWriter out = new PrintWriter(
               new OutputStreamWriter(new FileOutputStream(folder.getPath() + "/.content.xml"), StandardCharsets.UTF_8),
-               true)) {
+              true)) {
         out.print(pageTemplate.apply(context));
-        pages.add(pageTitle);
+        if (!pages.containsKey(key)) {
+          pages.put(key, new HashSet<>());
+        }
+        pages.get(key).add(pageTitle);
       }
     }
     catch (IOException ioe) {
@@ -113,15 +117,26 @@ public class Wiki2Aem {
     }
   }
 
+  /**
+   * writes the index for the wiki pages. the pages are grouped in subfolders named by their first two characters (a, aa, ab,...)
+   */
   private void writeIndex() {
+    writeIndex(targetFolder, pages.keySet());
+    pages.forEach((key, value) -> {
+      writeIndex(targetFolder + "/" + key, value);
+    });
+  }
+
+  private void writeIndex(String fileName, Set<String> subpages) {
     try {
-      Map<String, List<String>> m = new HashMap<>();
-      m.put("pages", pages);
+      Map<String, Set<String>> m = new HashMap<>();
+      m.put("pages", subpages);
       Context context = Context
               .newBuilder(m)
               .resolver(MapValueResolver.INSTANCE)
               .build();
-      File folder = new File(targetFolder);
+      File folder = new File(fileName);
+      folder.mkdirs();
       try (PrintWriter out = new PrintWriter(
               new OutputStreamWriter(new FileOutputStream(folder.getPath() + "/.content.xml"), StandardCharsets.UTF_8),
                true)) {
