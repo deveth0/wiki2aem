@@ -5,6 +5,8 @@ This project provides a simple way to create AEM Pages from a Wikipedia XML Dump
 
 It uses handlebars to provide an easy extensibility of the created pages. By default [wcm.io Content Pages](http://wcm.io/samples/) are created and the wikipedia article's text is used as richtext.
 
+Find more information on my [blog](https://www.dev-eth0.de/blog/2017/02/18/wiki2aem.html).
+
 
 ## Usage
 
@@ -15,7 +17,7 @@ Build the project using `mvn clean install` and run it with the following argume
 
 Example
 ````
-java -jar YOUR_JAR_FILE wikidump.xml outputfolder
+java -jar target\wiki2aem-1.0-SNAPSHOT-jar-with-dependencies.jar wiki_dump_small.xml output
 ````
 
 ## Output
