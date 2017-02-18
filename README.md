@@ -8,10 +8,15 @@ It uses handlebars to provide an easy extensibility of the created pages. By def
 
 ## Usage
 
-You can run the project with the following arguments:
+Build the project using `mvn clean install` and run it with the following arguments:
 
 * input filename
 * output folder
+
+Example
+````
+java -jar YOUR_JAR_FILE wikidump.xml outputfolder
+````
 
 ## Output
 
