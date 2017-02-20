@@ -69,7 +69,9 @@ public class Wiki2Aem {
     InputStream in = new FileInputStream(sourceFile);
     XMLInputFactory factory = XMLInputFactory.newInstance();
     XMLStreamReader reader = factory.createXMLStreamReader(in);
+    System.out.println("Parsing input xml file");
     parse(reader);
+    System.out.println("Writing pageindex");
     writeIndex();
   }
 
@@ -135,16 +137,17 @@ public class Wiki2Aem {
    * writes the index for the wiki pages. the pages are grouped in subfolders named by their first two characters (a, aa, ab,...)
    */
   private void writeIndex() {
-    writeIndex(targetFolder, pages.keySet());
+    writeIndex(targetFolder, "wiki", pages.keySet());
     pages.forEach((key, value) -> {
-      writeIndex(targetFolder + "/" + key, value);
+      writeIndex(targetFolder + "/" + Escape.validName(key), Escape.validName(key), value);
     });
   }
 
-  private void writeIndex(String fileName, Set<String> subpages) {
+  private void writeIndex(String fileName, String pageTitle, Set<String> subpages) {
     try {
-      Map<String, Set<String>> m = new HashMap<>();
+      Map<String, Object> m = new HashMap<>();
       m.put("pages", subpages);
+      m.put("title", pageTitle);
       Context context = Context
               .newBuilder(m)
               .resolver(MapValueResolver.INSTANCE)
