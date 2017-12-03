@@ -51,11 +51,12 @@ public class Wiki2Aem {
   private final Template pageTemplate;
   private final Template rootFolderTemplate;
   private final Map<String, Set<String>> pages = new HashMap<>();
+  private final int limit;
 
-  public Wiki2Aem(String sourceFile, String targetFolder) throws IOException {
+  public Wiki2Aem(String sourceFile, String targetFolder, int limit) throws IOException {
     this.sourceFile = sourceFile;
     this.targetFolder = targetFolder;
-
+    this.limit = limit;
     // ensure the target Folder exists
     File f = new File(targetFolder);
     f.mkdirs();
@@ -77,7 +78,8 @@ public class Wiki2Aem {
 
   private void parse(XMLStreamReader reader) throws XMLStreamException {
     Map<String, String> content = new HashMap<>();
-    while (reader.hasNext()) {
+    int count = 0;
+    while (reader.hasNext() && count <= limit) {
       switch (reader.getEventType()) {
         case XMLStreamConstants.START_ELEMENT:
           switch (reader.getLocalName()) {
@@ -99,6 +101,7 @@ public class Wiki2Aem {
           switch (reader.getLocalName()) {
             case "page":
               writePage(content);
+              count += 1;
               break;
           }
         default:

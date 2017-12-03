@@ -25,11 +25,11 @@ import javax.xml.stream.XMLStreamException;
 public class Main {
 
   public static void main(String[] args) throws IOException, XMLStreamException {
-    if (args.length != 2) {
+    if (args.length != 2 && args.length != 3) {
       printHelp();
     }
     else {
-      Wiki2Aem wiki2aem = new Wiki2Aem(args[0], args[1]);
+      Wiki2Aem wiki2aem = new Wiki2Aem(args[0], args[1], args.length == 3 ? Integer.parseInt(args[2]) : Integer.MAX_VALUE);
       wiki2aem.convert();
     }
 
@@ -40,6 +40,7 @@ public class Main {
     System.out.println("---------------------");
     System.out.println("Parameter 1: path to wiki-dump");
     System.out.println("Parameter 2: target folder");
+    System.out.println("Parameter 3: limit (optional)");
     System.out.println("Example:");
     System.out.println("java -jar YOUR_JAR_FILE wikidump.xml outputfolder");
   }
